@@ -166,8 +166,10 @@ nav .item3{
 
 .must-question input{
   width: 25px;
-  height: 25px;
+  height: 25px; 
 }
+
+
 
 
 
@@ -181,6 +183,7 @@ nav .item3{
 .todotime{
   padding-left: 10px;
   border-bottom: 1px solid white;
+  margin-bottom: 3px;
 }
 
 .todowork{
@@ -222,7 +225,6 @@ nav .item3{
   outline: none;
   
 }
-
 .close{
   background: url("../public/close.png");
   background-size: cover;

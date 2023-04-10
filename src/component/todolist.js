@@ -1,18 +1,17 @@
 import React from "react";
-import "./App.css"
-export default  function todolist( {item} ){
+import "../App.css"
+import modalList from "./modalList";
+function todolist( {item} ){
 
-  
   return(
-  <li className='todo'> 
-  {console.log(item)}
+  <li className='todo' > 
       <div className='must-question'>
         <input type = "checkbox" className="must-checkbox"></input>
         <label for ="must-checkbox" className = "must-label"></label>
       </div>
       <div className='todo-box'>
         <div className='todotime'>
-          {item.start}
+          {item.id}
         </div>
         <div className='todowork'>
           {item.todo} 
@@ -24,3 +23,5 @@ export default  function todolist( {item} ){
     </li>
     )
 }
+
+export default todolist

@@ -1,37 +1,46 @@
 import './App.css';
 import { useState,useEffect } from 'react';
 import Modal from './modal/modal.js'
-import Todolist from './todolist';
-
+import Todolist from './component/todolist';
+import Must from './component/Must.js'
 
 function App() {
-  const [green, setgreen] = useState(true)
-  const [modalOpen, setModalOpen] = useState(false);
+  const [must, setmust] = useState([{
+    id : 1,
+    'todo' : '점심'
+  }])
   const [todo,setTodo] = useState([{
-    "start" : '9:00 AM',
-    "end" : '10:00 AM',
+    "id" : 1,
     'todo' : '기상',
-    'green' : 'green'
 },
 {
-  "start" : '10:00 AM',
-  "end" : '11:00 AM',
+  "id" : 2,
   'todo' : '수업 시작',
-  'green' : 'green'
 }])
+
+  const [modalOpen, setModalOpen] = useState(false);
 
 
   function showModal() {
     setModalOpen(!modalOpen);
   };
 
-  function greenCheck(){
-    setgreen(!green)
+  function addTodo(ntodo) {
+    console.log(ntodo)
+    const newtodo = {
+      'id': todo.length+1,
+      'todo' : ntodo
+    }
+    const newArr = [...todo,newtodo]
+
+    setTodo(newArr)
+    console.log(todo)
   }
 
-  useEffect(() =>{
-    setgreen();
-  }, []);
+  useEffect(() => {
+    const sorted = [...todo].sort((a,b) => a.id - b.id);
+    
+  }, [todo])
 
   
   return (
@@ -39,12 +48,9 @@ function App() {
     <div className={modalOpen ? "modal-container":'container'}>
       <div className='calender-container'>
         <div className='calender'>달력</div>
+        <div className='must-head'><span>오늘은 꼭!</span></div>
         <ul className='must-today'> 
-          <li className='must-head'><span>오늘은 꼭!</span></li>
-          <li className = 'must'>
-            <div className='work'><span>ddddd<br/></span></div>
-            <div className='time'><span>1:00 PM<br/></span></div>
-            </li>
+          <Must item = {must} />
         </ul>
       </div>
       <div className='to-do-container'>
@@ -72,9 +78,8 @@ function App() {
           {todo.map((item, idx) => <Todolist item = {item} key = {idx} />)}
         </ul>
       </div>
-    {console.log(modalOpen)}
     </div>
-    <div>{modalOpen ? <Modal showModal = {showModal} /> : null} </div>
+    <div>{modalOpen ? <Modal showModal = {showModal} addTodo = {addTodo} /> : null} </div>
     </>
   );
 }
