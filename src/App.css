@@ -1,38 +1,262 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #363636;
+  color : white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container{
+  width: 100%;
+  height: 832px;
+  background-color: #363636;
   display: flex;
-  flex-direction: column;
+  border-radius: 30%;
+}
+
+.modal-container{
+  width: 100%;
+  height: 832px;
+  background-color: #363636;
+  display: flex;
+  border-radius: 30%;
+  opacity: 50%;
+}
+
+.calender-container{
+  flex-grow: 1;
+  height: 850px;
+  border : 1px solid white;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.calender{
+  text-align: center;
+  font-size : 30px;
+  height: 591px ;
+  border : 1px solid white;
+}
+
+
+.must-head{
+  margin-top: 15px;
+  font-size : 30px;
+  text-align: center;
+  border-bottom: 1px solid #FFFFFF ;
+}
+
+.must{
+  list-style: none;
+  margin-top: 10px;
+  padding-top: 10px;
+  font-size : 20px;
+  height: 80px;
+  border-bottom: 1px solid #FFFFFF ;
+}
+.must span{
+  margin-left: 10px;
+}
+.must .work{
+  border-bottom: 1px solid white;
+}
+.time{
+  margin-top: 5px;
+}
+
+.to-do-container{
+  flex-grow: 3;
+  height: 850px;
+  width: 450px;;
+  font-size: 40px;
+  border : 1px solid white;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+header{
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  height: 100px;
+  border: 1px solid white;
+
+}
+
+.todo-add{
+  width: 170px;
+  height: 47px;
+  background-color: #505050;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 23px;
+}
+
+.todo-add:hover{
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
+
+.todo-add span{
+  background-color: #505050;
+}
+
+.today{
+  
+  display: flex;
+  justify-content: end;
+  align-items: start;
+  font-size : 20px;
+  text-align: end;
+}
+.green-red{
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+  font-size : 30px;
+  text-align: end;
+  margin-right:10px;
 }
 
-.App-link {
-  color: #61dafb;
+nav{
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  height: 50px;
+  font-size : 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav .item1{
+  width: 144px;
+  padding-top: 13px;
+  border: 1px solid white;
 }
+
+nav .item2{
+  padding-top: 13px;
+  border: 1px solid white;
+  flex-grow: 5;
+}
+
+nav .item3{
+  width: 144px;
+  padding-top: 13px;
+  border: 1px solid white;
+  
+}
+
+.todo{
+  display: flex;
+  justify-content: space-between;
+  height: 130px;
+  font-size: 20px;
+}
+
+.must-question {
+  width: 144px;
+  border: 1px solid white;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.must-question input{
+  width: 25px;
+  height: 25px;
+}
+
+
+
+.todo-box{
+  padding-top: 13px;
+  border: 1px solid white;
+  border-right: none;
+  flex-grow: 5;
+}
+
+.todotime{
+  padding-left: 10px;
+  border-bottom: 1px solid white;
+}
+
+.todowork{
+  font-size : 30px;
+  padding-left: 10px;
+  padding-top : 25px;
+}
+
+
+
+.secces {
+  width: 144px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.input-green {
+  appearance: none;
+  background: url("../public/close.png");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  outline: none;
+  
+}
+
+.input-green:checked {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background: url("../public/check.png");
+  background-size: cover;
+  cursor: pointer;
+  outline: none;
+  
+}
+
+.close{
+  background: url("../public/close.png");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  
+}
+
+.check{
+  background: url("../public/check.png");
+  background-size: cover;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 10px;  
+}
+
+
+
+.must-checkbox {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  cursor: pointer;
+}
+
+.must-checkbox:checked {
+  appearance: none;
+  background: url("../public/check-arrow.png");
+  background-size: cover;
+  background-color: white;
+  width: 25px;
+  height: 25px;
+}
+

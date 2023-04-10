@@ -1,0 +1,100 @@
+.modal {
+  width: 800px;
+  height: 310px;
+  /* 최상단 위치 */
+  z-index: 999;
+  
+  /* 중앙 배치 */
+  /* top, bottom, left, right 는 브라우저 기준으로 작동한다. */
+  /* translate는 본인의 크기 기준으로 작동한다. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* 모달창 디자인 */
+  background-color: #363636;
+  border-radius: 5px;
+  border: 1px solid white;
+}
+h1{
+  text-align: center;
+  background-color: #505050;
+}
+
+.head{
+  display: flex;
+  justify-content: end;
+  background-color: #505050;
+}
+
+.x{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-left: 320px;
+  font-size: 30px;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #505050;
+  
+}
+
+.x:hover{
+border: 1px solid white;
+transition: 0.3s;
+}
+
+.add-time-form{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.add-time-form input{
+  font-size: 21px;
+  padding: 5px;
+  width: 200px;
+  height: 50px;
+  border-radius: 30px;
+  margin-right: 25px;
+  margin-left: 25px;
+  background-color: #505050;
+  border: 1px solid white;
+}
+
+textarea{
+  font-size: 21px;
+  padding: 5px;
+  margin-left: 150px;
+  width: 500px;
+  height: 100px;
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #505050;
+}
+
+.button{
+  display: flex;
+  justify-content: end;
+  margin: 0 15px 10px 10px ;
+}
+
+.button button{
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 5px; 
+}
+
+.button button:hover{
+  background-color: white;
+  color: black;
+  transition: 0.3s;
+}
